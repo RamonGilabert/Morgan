@@ -10,4 +10,4 @@ Make sure to follow the guidelines of the code and the two indentation as is, yo
 
 ### Other information
 
-GitHub Issues is for reporting bugs, discussing features and general feedback in **Walker**. If you are posting about a crash in your application, a stack trace is helpful, but additional context, in the form of code and explanation, is necessary to be of any use.
+GitHub Issues is for reporting bugs, discussing features and general feedback in **Morgan**. If you are posting about a crash in your application, a stack trace is helpful, but additional context, in the form of code and explanation, is necessary to be of any use.
