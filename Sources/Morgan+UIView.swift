@@ -100,10 +100,10 @@ public extension UIView {
     animate(self, duration: duration) {
       $0.transform3D = CATransform3DMakeRotation(0.32, 0, 0, 1)
     }.chain(duration: duration / 1.2) {
-      $0.transform3D = CATransform3DMakeRotation(0.20, 0, 0, 1)
+      $0.transform3D = CATransform3DMakeRotation(0.22, 0, 0, 1)
     }.chain(duration: duration / 1.2) {
       $0.transform3D = CATransform3DMakeRotation(0.25, 0, 0, 1)
-    }.chain(delay: 0.25) {
+      }.chain(delay: 0.25, duration: duration * 4.5) {
       $0.transform = CGAffineTransformMakeTranslation(0, 1000)
     }.finally {
       guard reset else { return }
