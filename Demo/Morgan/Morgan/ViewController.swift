@@ -41,7 +41,7 @@ class ViewController: UIViewController {
   // MARK: - Action methods
 
   func handleTapGesture() {
-    animationView.swing()
+    animationView.fall()
   }
 
   // MARK: - Configuration

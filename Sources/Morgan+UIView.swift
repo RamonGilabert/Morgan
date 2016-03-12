@@ -66,7 +66,7 @@ public extension UIView {
     animate(self, duration: duration) {
       $0.transform = CGAffineTransformMakeScale(1.3, 0.7)
     }.chain(duration: duration) {
-      $0.transform = CGAffineTransformMakeScale(0.7, 1.1)
+      $0.transform = CGAffineTransformMakeScale(0.7, 1.3)
     }.chain(duration: duration) {
       $0.transform = CGAffineTransformMakeScale(1.2, 0.8)
     }.chain(spring: 100, friction: 10, mass: 10) {
@@ -83,6 +83,34 @@ public extension UIView {
       $0.transform3D = CATransform3DMakeRotation(0.1, 0, 0, 1)
     }.chain(duration: duration) {
       $0.transform = CGAffineTransformIdentity
+    }
+  }
+
+  // MARK: - Fall
+
+  public func fall(duration: NSTimeInterval = 0.15, reset: Bool = true) {
+    let initialAnchor = layer.anchorPoint
+    let initialOrigin = layer.frame.origin
+
+    layer.anchorPoint = CGPoint(x: 0, y: 0)
+    layer.frame.origin = CGPoint(
+      x: layer.frame.origin.x - layer.frame.size.width / 2,
+      y: layer.frame.origin.y - layer.frame.size.height / 2)
+
+    animate(self, duration: duration) {
+      $0.transform3D = CATransform3DMakeRotation(0.32, 0, 0, 1)
+    }.chain(duration: duration / 1.2) {
+      $0.transform3D = CATransform3DMakeRotation(0.20, 0, 0, 1)
+    }.chain(duration: duration / 1.2) {
+      $0.transform3D = CATransform3DMakeRotation(0.25, 0, 0, 1)
+    }.chain(delay: 0.25) {
+      $0.transform = CGAffineTransformMakeTranslation(0, 1000)
+    }.finally {
+      guard reset else { return }
+
+      self.layer.anchorPoint = initialAnchor
+      self.layer.transform = CATransform3DIdentity
+      self.layer.frame.origin = initialOrigin
     }
   }
 }
