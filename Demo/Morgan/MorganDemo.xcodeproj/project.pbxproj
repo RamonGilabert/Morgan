@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		292D71F31C94A8B600CFC060 /* Morgan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Morgan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		292D71F31C94A8B600CFC060 /* MorganDemoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorganDemoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		292D71F61C94A8B600CFC060 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		292D71F81C94A8B600CFC060 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		292D71FD1C94A8B600CFC060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		292D71F41C94A8B600CFC060 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				292D71F31C94A8B600CFC060 /* Morgan.app */,
+				292D71F31C94A8B600CFC060 /* MorganDemoDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,9 +88,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		292D71F21C94A8B600CFC060 /* Morgan */ = {
+		292D71F21C94A8B600CFC060 /* MorganDemoDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 292D72051C94A8B600CFC060 /* Build configuration list for PBXNativeTarget "Morgan" */;
+			buildConfigurationList = 292D72051C94A8B600CFC060 /* Build configuration list for PBXNativeTarget "MorganDemoDemo" */;
 			buildPhases = (
 				2CFA418D57C4ADD17770DB1B /* Check Pods Manifest.lock */,
 				292D71EF1C94A8B600CFC060 /* Sources */,
@@ -103,9 +103,9 @@
 			);
 			dependencies = (
 			);
-			name = Morgan;
+			name = MorganDemoDemo;
 			productName = Morgan;
-			productReference = 292D71F31C94A8B600CFC060 /* Morgan.app */;
+			productReference = 292D71F31C94A8B600CFC060 /* MorganDemoDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -123,7 +123,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 292D71EE1C94A8B600CFC060 /* Build configuration list for PBXProject "Morgan" */;
+			buildConfigurationList = 292D71EE1C94A8B600CFC060 /* Build configuration list for PBXProject "MorganDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -136,7 +136,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				292D71F21C94A8B600CFC060 /* Morgan */,
+				292D71F21C94A8B600CFC060 /* MorganDemoDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -314,7 +314,7 @@
 				INFOPLIST_FILE = Morgan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RamonGilabert.Morgan;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MorganDemoDemo;
 			};
 			name = Debug;
 		};
@@ -326,14 +326,14 @@
 				INFOPLIST_FILE = Morgan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RamonGilabert.Morgan;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MorganDemoDemo;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		292D71EE1C94A8B600CFC060 /* Build configuration list for PBXProject "Morgan" */ = {
+		292D71EE1C94A8B600CFC060 /* Build configuration list for PBXProject "MorganDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				292D72031C94A8B600CFC060 /* Debug */,
@@ -342,7 +342,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		292D72051C94A8B600CFC060 /* Build configuration list for PBXNativeTarget "Morgan" */ = {
+		292D72051C94A8B600CFC060 /* Build configuration list for PBXNativeTarget "MorganDemoDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				292D72061C94A8B600CFC060 /* Debug */,

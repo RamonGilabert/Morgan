@@ -1,4 +1,5 @@
 import UIKit
+import Morgan
 
 class ViewController: UIViewController {
 
@@ -11,8 +12,19 @@ class ViewController: UIViewController {
     view.backgroundColor = UIColor.whiteColor()
     view.translatesAutoresizingMaskIntoConstraints = false
     view.layer.cornerRadius = 7.5
+    view.layer.shadowColor = UIColor.blackColor().colorWithAlphaComponent(0.15).CGColor
+    view.layer.shadowOffset.height = 5
+    view.layer.shadowRadius = 5
+    view.layer.shadowOpacity = 1
 
     return view
+  }()
+
+  lazy var tapGesture: UITapGestureRecognizer = { [unowned self] in
+    let gesture = UITapGestureRecognizer()
+    gesture.addTarget(self, action: "handleTapGesture")
+
+    return gesture
   }()
 
   override func viewDidLoad() {
@@ -21,7 +33,15 @@ class ViewController: UIViewController {
     view.addSubview(animationView)
     view.backgroundColor = UIColor(red:0, green:0.56, blue:0.98, alpha:1)
 
+    animationView.addGestureRecognizer(tapGesture)
+
     setupConstraints()
+  }
+
+  // MARK: - Action methods
+
+  func handleTapGesture() {
+    animationView.fade()
   }
 
   // MARK: - Configuration
@@ -33,5 +53,11 @@ class ViewController: UIViewController {
       animationView.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
       animationView.centerYAnchor.constraintGreaterThanOrEqualToAnchor(view.centerYAnchor, constant: -120)
     ])
+  }
+
+  // MARK: - Helper methods
+
+  override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    return .LightContent
   }
 }
