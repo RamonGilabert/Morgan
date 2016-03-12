@@ -59,4 +59,30 @@ public extension UIView {
       if remove { self.removeFromSuperview() }
     }
   }
+
+  // MARK: - Transformations
+
+  public func morph(duration: NSTimeInterval = 0.2) {
+    animate(self, duration: duration) {
+      $0.transform = CGAffineTransformMakeScale(1.3, 0.7)
+    }.chain(duration: duration) {
+      $0.transform = CGAffineTransformMakeScale(0.7, 1.1)
+    }.chain(duration: duration) {
+      $0.transform = CGAffineTransformMakeScale(1.2, 0.8)
+    }.chain(spring: 100, friction: 10, mass: 10) {
+      $0.transform = CGAffineTransformIdentity
+    }
+  }
+
+  public func swing(duration: NSTimeInterval = 0.075) {
+    animate(self, duration: duration) {
+      $0.transform3D = CATransform3DMakeRotation(0.25, 0, 0, 1)
+    }.chain(duration: duration) {
+      $0.transform3D = CATransform3DMakeRotation(-0.25, 0, 0, 1)
+    }.chain(duration: duration) {
+      $0.transform3D = CATransform3DMakeRotation(0.1, 0, 0, 1)
+    }.chain(duration: duration) {
+      $0.transform = CGAffineTransformIdentity
+    }
+  }
 }
