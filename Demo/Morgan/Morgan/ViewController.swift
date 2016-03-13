@@ -20,6 +20,17 @@ class ViewController: UIViewController {
     return view
   }()
 
+  lazy var codeLabel: UILabel = {
+    let label = UILabel()
+    label.font = UIFont(name: "Menlo-Regular", size: 16)
+    label.textColor = UIColor.whiteColor()
+    label.textAlignment = .Center
+    label.text = "Tap the view to animate"
+    label.translatesAutoresizingMaskIntoConstraints = false
+
+    return label
+  }()
+
   lazy var tapGesture: UITapGestureRecognizer = { [unowned self] in
     let gesture = UITapGestureRecognizer()
     gesture.addTarget(self, action: "handleTapGesture")
@@ -30,7 +41,8 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.addSubview(animationView)
+    [codeLabel, animationView].forEach { view.addSubview($0) }
+
     view.backgroundColor = UIColor(red:0, green:0.56, blue:0.98, alpha:1)
 
     animationView.addGestureRecognizer(tapGesture)
@@ -42,27 +54,35 @@ class ViewController: UIViewController {
 
   func handleTapGesture() {
     tapGesture.enabled = false
-    
+
     switch Int(arc4random_uniform(6)) {
     case 0:
       animationView.shake()
+      codeLabel.text = "view.shake()"
     case 1:
       animationView.levitate(times: 2)
+      codeLabel.text = "view.levitate()"
     case 2:
       animationView.morph()
+      codeLabel.text = "view.morph()"
     case 3:
       animationView.swing()
+      codeLabel.text = "view.swing()"
     case 4:
-      animationView.fall(reset: true)
+      animationView.peek()
+      codeLabel.text = "view.peek()"
     case 5:
       animationView.flip()
+      codeLabel.text = "view.flip()"
     default:
-      animationView.fall(reset: true)
+      animationView.peek()
+      codeLabel.text = "view.peek()"
     }
 
-    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1.5 * Double(NSEC_PER_SEC)))
     dispatch_after(delayTime, dispatch_get_main_queue()) {
       self.tapGesture.enabled = true
+      self.codeLabel.text = ""
     }
   }
 
@@ -70,6 +90,9 @@ class ViewController: UIViewController {
 
   func setupConstraints() {
     NSLayoutConstraint.activateConstraints([
+      codeLabel.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
+      codeLabel.centerYAnchor.constraintGreaterThanOrEqualToAnchor(animationView.topAnchor, constant: -75),
+
       animationView.widthAnchor.constraintEqualToConstant(Dimensions.viewSize),
       animationView.heightAnchor.constraintEqualToConstant(Dimensions.viewSize),
       animationView.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),

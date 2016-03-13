@@ -51,6 +51,8 @@ public extension UIView {
   }
 
   public func peek(completion: (() -> ())? = nil) {
+    layer.transform = CATransform3DMakeScale(0.01, 0.01, 1)
+
     spring(self, spring: 100, friction: 10, mass: 10) {
       $0.transform = CGAffineTransformIdentity
     }.finally {
@@ -111,7 +113,7 @@ public extension UIView {
     layer.anchorPoint = CGPoint(x: 0, y: 0)
     layer.frame.origin = CGPoint(
       x: layer.frame.origin.x - layer.frame.size.width / 2,
-      y: layer.frame.origin.y - layer.frame.size.height / 2)
+      y: layer.frame.origin.y - layer.frame.size.height / 2) 
 
     animate(self, duration: duration) {
       $0.transform3D = CATransform3DMakeRotation(0.32, 0, 0, 1)
@@ -122,7 +124,6 @@ public extension UIView {
       }.chain(delay: 0.25, duration: duration * 4.5) {
       $0.transform = CGAffineTransformMakeTranslation(0, 1000)
     }.finally {
-
       if reset {
         self.layer.anchorPoint = initialAnchor
         self.layer.transform = CATransform3DIdentity
@@ -223,7 +224,7 @@ public extension UIView {
 
   // MARK: - Zoom
 
-  public func zoom(duration: NSTimeInterval = 0.5, zoomOut: Bool = false, completion: (() -> ())? = nil) {
+  public func zoom(duration: NSTimeInterval = 0.5, zoomOut: Bool = true, completion: (() -> ())? = nil) {
 
     if zoomOut {
       animate(self) {
