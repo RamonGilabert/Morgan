@@ -52,7 +52,7 @@ github 'RamonGilabert/Morgan'
 
 ## Upcoming features
 
-As stated above, Morgan is always in motion, always changing, growing and improving, there's no roadmap, just a set of new PR every time I, or someone else finds something interesting to share with the community.
+As stated above, **Morgan** is always in motion, always changing, growing and improving, there's no roadmap, just a set of new PR every time I, or someone else finds something interesting to share with the community.
 
 ## Author
 
@@ -60,7 +60,7 @@ Ramon Gilabert with ♥️
 
 ## Contribute
 
-We would love you to contribute to **Morgan**, check the [CONTRIBUTING](https://github.com/RamonGilabert/Morgan/blob/master/CONTRIBUTING.md) file for more info.
+I would love you to contribute to **Morgan**, check the [CONTRIBUTING](https://github.com/RamonGilabert/Morgan/blob/master/CONTRIBUTING.md) file for more information.
 
 ## License
 
