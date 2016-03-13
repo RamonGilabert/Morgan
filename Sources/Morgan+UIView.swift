@@ -113,4 +113,27 @@ public extension UIView {
       self.layer.frame.origin = initialOrigin
     }
   }
+
+  // MARK: - Flip
+
+  public func flip(duration: NSTimeInterval = 0.5, vertical: Bool = true) {
+    let initialZ = layer.zPosition
+    let x: CGFloat = vertical ? 0 : 1
+    let y: CGFloat = vertical ? 1 : 0
+
+    layer.zPosition = 400
+
+    var perspective = CATransform3DIdentity
+    perspective.m34 = -0.4 / layer.frame.size.width
+
+    animate(self, duration: duration) {
+      $0.transform3D =
+        CATransform3DEqualToTransform(self.layer.transform, CATransform3DRotate(perspective, 0, x, y, 0))
+        || CATransform3DIsIdentity(self.layer.transform)
+        ? CATransform3DRotate(perspective, CGFloat(M_PI), x, y, 0)
+        : CATransform3DRotate(perspective, 0, x, y, 0)
+    }.finally {
+      self.layer.zPosition = initialZ
+    }
+  }
 }
