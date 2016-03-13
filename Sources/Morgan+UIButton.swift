@@ -3,15 +3,19 @@ import Walker
 
 public extension UIButton {
 
-  public func buttonDown(button: UIButton) {
+  public func buttonDown(button: UIButton, completion: (() -> ())? = nil) {
     guard let imageView = button.imageView else { return }
 
-    imageView.pushDown()
+    imageView.pushDown(completion: {
+      completion?()
+    })
   }
 
-  public func buttonUp(button: UIButton) {
+  public func buttonUp(button: UIButton, completion: (() -> ())? = nil) {
     guard let imageView = button.imageView else { return }
 
-    imageView.pushUp()
+    imageView.pushUp(completion: {
+      completion?()
+    })
   }
 }
