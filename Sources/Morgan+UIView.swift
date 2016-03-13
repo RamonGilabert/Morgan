@@ -126,12 +126,14 @@ public extension UIView {
     var perspective = CATransform3DIdentity
     perspective.m34 = -0.4 / layer.frame.size.width
 
+    let original = CATransform3DRotate(perspective, 0, x, y, 0)
+    let rotated = CATransform3DRotate(perspective, CGFloat(M_PI), x, y, 0)
+
     animate(self, duration: duration) {
       $0.transform3D =
-        CATransform3DEqualToTransform(self.layer.transform, CATransform3DRotate(perspective, 0, x, y, 0))
+        CATransform3DEqualToTransform(self.layer.transform, original)
         || CATransform3DIsIdentity(self.layer.transform)
-        ? CATransform3DRotate(perspective, CGFloat(M_PI), x, y, 0)
-        : CATransform3DRotate(perspective, 0, x, y, 0)
+        ? rotated : original
     }.finally {
       self.layer.zPosition = initialZ
     }
