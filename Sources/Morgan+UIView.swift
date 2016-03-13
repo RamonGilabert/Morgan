@@ -88,7 +88,7 @@ public extension UIView {
 
   // MARK: - Fall
 
-  public func fall(duration: NSTimeInterval = 0.15, reset: Bool = true) {
+  public func fall(duration: NSTimeInterval = 0.15, reset: Bool = false) {
     let initialAnchor = layer.anchorPoint
     let initialOrigin = layer.frame.origin
 
@@ -171,8 +171,28 @@ public extension UIView {
 
   // MARK: - Disappear
 
-  public func slide() {
-    
+  public func disappear(duration: NSTimeInterval = 0.5, reset: Bool = false) {
+    let anchorPoint = layer.anchorPoint
+
+    layer.anchorPoint = CGPoint(x: 0, y: 0)
+    layer.frame.origin = CGPoint(
+      x: layer.frame.origin.x - layer.frame.size.width / 2,
+      y: layer.frame.origin.y - layer.frame.size.height / 2)
+
+    animate(self, duration: 0.1) {
+      $0.transform = CGAffineTransformMakeTranslation(-15, 0)
+    }.chain(duration: duration) {
+      $0.transform = CGAffineTransformMakeTranslation(500, 0)
+    }.finally {
+      self.layer.anchorPoint = anchorPoint
+      self.layer.frame.origin = CGPoint(
+        x: self.layer.frame.origin.x + self.layer.frame.size.width / 2,
+        y: self.layer.frame.origin.y + self.layer.frame.size.height / 2)
+
+      if reset {
+        self.layer.transform = CATransform3DIdentity
+      }
+    }
   }
 
   // MARK: - Zoom
