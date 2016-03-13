@@ -1,5 +1,6 @@
 import UIKit
 import Morgan
+import Walker
 
 class ViewController: UIViewController {
 
@@ -54,6 +55,8 @@ class ViewController: UIViewController {
 
   func handleTapGesture() {
     tapGesture.enabled = false
+
+    closeDistilleries()
 
     switch Int(arc4random_uniform(6)) {
     case 0:

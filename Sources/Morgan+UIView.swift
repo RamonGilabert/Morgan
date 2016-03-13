@@ -53,7 +53,7 @@ public extension UIView {
   public func peek(completion: (() -> ())? = nil) {
     layer.transform = CATransform3DMakeScale(0.01, 0.01, 1)
 
-    spring(self, spring: 100, friction: 10, mass: 10) {
+    spring(self, delay: 0.01, spring: 100, friction: 10, mass: 10) {
       $0.transform = CGAffineTransformIdentity
     }.finally {
       completion?()
