@@ -1,6 +1,7 @@
 ![Morgan](https://github.com/RamonGilabert/Morgan/blob/master/Resources/logo.png)
 
 <div align = "center">
+<br>
 <a href="https://github.com/Carthage/Carthage" target="blank"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" /></a>
 <a href="http://cocoadocs.org/docsets/Walker" target="blank"><img src="https://img.shields.io/cocoapods/v/Walker.svg?style=flat" /></a>
 <a href="http://cocoadocs.org/docsets/Walker" target="blank"><img src="https://img.shields.io/cocoapods/l/Walker.svg?style=flat" /></a>
