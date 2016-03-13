@@ -13,9 +13,23 @@ Note that **Morgan** is never finished, as I find more and more cases and animat
 
 ## Code
 
-**Morgan** uses **[Walker](https://github.com/RamonGilabert/Walker)** as the animation engine and works tight with him to provide you with a set of different animations, let me show you a few of them.
+**Morgan** uses **[Walker](https://github.com/RamonGilabert/Walker)** as the animation engine and works tight with him to provide you with a set of different animations, let me list you a few of them.
 
-To check the rest of the animations available check the [source file](www.apple.com).
+```swift
+view.fall()
+view.zoom()
+view.levitate()
+view.flip()
+view.swing()
+view.morph()
+view.shake()
+view.peek()
+view.zoom()
+view.slide()
+view.disappear()
+```
+
+To check the rest of the animations available check the [source files](https://github.com/RamonGilabert/Morgan/tree/master/Sources).
 
 ## Installation
 
