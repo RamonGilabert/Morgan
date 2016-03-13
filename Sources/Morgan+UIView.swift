@@ -138,4 +138,58 @@ public extension UIView {
       self.layer.zPosition = initialZ
     }
   }
+
+  // MARK: - Appear
+
+  public func slide(duration: NSTimeInterval = 0.5,
+    fade: Bool = true, origin: CGPoint = CGPointZero) {
+      
+      let point = origin == CGPointZero ? layer.frame.origin : origin
+      let anchorPoint = layer.anchorPoint
+      let initialOrigin = layer.frame.origin
+
+      layer.opacity = fade ? 0 : layer.opacity
+      layer.frame.origin.x = -500
+
+      animate(self, delay: 0.01, duration: duration) {
+        $0.origin = point
+        $0.alpha = 1
+      }.then {
+        self.layer.anchorPoint = CGPoint(x: 0, y: 0)
+        self.layer.frame.origin = CGPoint(
+          x: self.layer.frame.origin.x - self.layer.frame.size.width / 2,
+          y: self.layer.frame.origin.y - self.layer.frame.size.height / 2)
+      }.chain(duration: 0.1) {
+        $0.transform3D = CATransform3DMakeRotation(-0.075, 0, 0, 1)
+      }.chain(spring: 200, friction: 10, mass: 10) {
+        $0.transform3D = CATransform3DIdentity
+      }.finally {
+        self.layer.anchorPoint = anchorPoint
+        self.layer.frame.origin = initialOrigin
+      }
+  }
+
+  // MARK: - Disappear
+
+  public func slide() {
+    
+  }
+
+  // MARK: - Zoom
+
+  public func zoom(duration: NSTimeInterval = 0.5, zoomOut: Bool = false) {
+
+    if zoomOut {
+      animate(self) {
+        $0.transform = CGAffineTransformMakeScale(3, 3)
+        $0.alpha = 0
+      }
+    } else {
+      layer.transform = CATransform3DMakeScale(0.01, 0.01, 1)
+
+      spring(self, spring: 75, friction: 10, mass: 10) {
+        $0.transform = CGAffineTransformIdentity
+      }
+    }
+  }
 }
