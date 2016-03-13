@@ -1,7 +1,6 @@
 ![Morgan](https://github.com/RamonGilabert/Morgan/blob/master/Resources/logo.png)
 <div align = "center">
-<img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" />
-[![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" /></a>
 [![Version](https://img.shields.io/cocoapods/v/Walker.svg?style=flat)](http://cocoadocs.org/docsets/Walker)
 [![License](https://img.shields.io/cocoapods/l/Walker.svg?style=flat)](http://cocoadocs.org/docsets/Walker)
 [![Platform](https://img.shields.io/cocoapods/p/Walker.svg?style=flat)](http://cocoadocs.org/docsets/Walker)
