@@ -1,4 +1,4 @@
-# Morgan
+![Morgan](https://github.com/RamonGilabert/Morgan/blob/master/Resources/logo.png)
 
 [![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/Walker.svg?style=flat)](http://cocoadocs.org/docsets/Walker)
