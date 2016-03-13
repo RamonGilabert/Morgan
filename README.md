@@ -8,6 +8,7 @@
 <a href="http://cocoadocs.org/docsets/Walker" target="blank"><img src="https://img.shields.io/cocoapods/p/Walker.svg?style=flat" /></a>
 <a href="http://cocoadocs.org/docsets/Walker" target="blank"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/Walker.svg?style=flat" /></a>
 <img src="https://img.shields.io/badge/%20in-swift%202.2-orange.svg" />
+<hr>
 </div>
 
 A travel companion for your apps, a solitaire friend for **[Walker](https://github.com/RamonGilabert/Walker)**. This library aims to make the job of using day to day animations easier, just with one line of code you are going to be able to do delightful animations.
