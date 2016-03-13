@@ -1,12 +1,5 @@
 ![Morgan](https://github.com/RamonGilabert/Morgan/blob/master/Resources/logo.png)
 
-[![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Version](https://img.shields.io/cocoapods/v/Walker.svg?style=flat)](http://cocoadocs.org/docsets/Walker)
-[![License](https://img.shields.io/cocoapods/l/Walker.svg?style=flat)](http://cocoadocs.org/docsets/Walker)
-[![Platform](https://img.shields.io/cocoapods/p/Walker.svg?style=flat)](http://cocoadocs.org/docsets/Walker)
-[![Documentation](https://img.shields.io/cocoapods/metrics/doc-percent/Walker.svg?style=flat)](http://cocoadocs.org/docsets/Walker)
-![Swift](https://img.shields.io/badge/%20in-swift%202.2-orange.svg)
-
 A travel companion for your apps, a solitaire friend for **[Walker](https://github.com/RamonGilabert/Walker)**. This library aims to make the job of using day to day animations easier, just with one line of code you are going to be able to do delightful animations.
 
 Note that **Morgan** is never finished, as I find more and more cases and animations in my daily iOS life, I'll keep adding them here, making the biggest set of animations in iOS, and I would be happy if you help me on that too.

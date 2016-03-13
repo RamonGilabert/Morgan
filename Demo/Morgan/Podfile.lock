@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Walker:
-    :commit: 452cbc74e265f130657743335e66d33d9b97ad09
+    :commit: da253edd244d96f5973b3505fa268b7dceb02fe1
     :git: https://www.github.com/RamonGilabert/Walker
 
 SPEC CHECKSUMS:
