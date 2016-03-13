@@ -22,8 +22,8 @@ public extension UIView {
 
   // MARK: - Float
 
-  public func levitate(duration: NSTimeInterval = 0.5, completion: (() -> ())? = nil) {
-    animate(self, duration: duration, options: [.Reverse, .Repeat(Float.infinity)]) {
+  public func levitate(duration: NSTimeInterval = 0.5, times: Float = Float.infinity, completion: (() -> ())? = nil) {
+    animate(self, duration: duration, options: [.Reverse, .Repeat(times)]) {
       $0.transform3D = CATransform3DMakeScale(0.97, 0.97, 0.97)
     }.finally {
       completion?()
@@ -154,6 +154,7 @@ public extension UIView {
         || CATransform3DIsIdentity(self.layer.transform)
         ? rotated : original
     }.finally {
+      self.layer.transform = CATransform3DIdentity
       self.layer.zPosition = initialZ
 
       completion?()

@@ -41,7 +41,29 @@ class ViewController: UIViewController {
   // MARK: - Action methods
 
   func handleTapGesture() {
-    animationView.disappear()
+    tapGesture.enabled = false
+    
+    switch Int(arc4random_uniform(6)) {
+    case 0:
+      animationView.shake()
+    case 1:
+      animationView.levitate(times: 2)
+    case 2:
+      animationView.morph()
+    case 3:
+      animationView.swing()
+    case 4:
+      animationView.fall(reset: true)
+    case 5:
+      animationView.flip()
+    default:
+      animationView.fall(reset: true)
+    }
+
+    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+    dispatch_after(delayTime, dispatch_get_main_queue()) {
+      self.tapGesture.enabled = true
+    }
   }
 
   // MARK: - Configuration
