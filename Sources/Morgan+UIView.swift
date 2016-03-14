@@ -32,18 +32,24 @@ public extension UIView {
 
   // MARK: - Push
 
-  public func pushDown(duration: NSTimeInterval = 0.2, completion: (() -> ())? = nil) {
+  public func pushDown(duration: NSTimeInterval = 0.15, completion: (() -> ())? = nil) {
     animate(self, duration: duration) {
       $0.transform = CGAffineTransformMakeScale(0.9, 0.9)
-    }.chain(spring: 200, friction: 10, mass: 10) {
+    }.chain(duration: duration / 2) {
+      $0.transform = CGAffineTransformMakeScale(1.1, 1.1)
+    }.chain(duration: duration / 2) {
       $0.transform = CGAffineTransformIdentity
+    }.finally {
+      completion?()
     }
   }
 
   public func pushUp(duration: NSTimeInterval = 0.2, completion: (() -> ())? = nil) {
     animate(self, duration: duration) {
       $0.transform = CGAffineTransformMakeScale(1.1, 1.1)
-    }.chain(spring: 200, friction: 10, mass: 10) {
+    }.chain(duration: duration / 2) {
+      $0.transform = CGAffineTransformMakeScale(0.9, 0.9)
+    }.chain(duration: duration / 2) {
       $0.transform = CGAffineTransformIdentity
     }.finally {
       completion?()
