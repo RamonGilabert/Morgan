@@ -54,9 +54,8 @@ class ViewController: UIViewController {
   // MARK: - Action methods
 
   func handleTapGesture() {
-    tapGesture.enabled = false
-
     closeDistilleries()
+    animationView.layer.transform = CATransform3DIdentity
 
     switch Int(arc4random_uniform(6)) {
     case 0:
@@ -80,12 +79,6 @@ class ViewController: UIViewController {
     default:
       animationView.peek()
       codeLabel.text = "view.peek()"
-    }
-
-    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1.5 * Double(NSEC_PER_SEC)))
-    dispatch_after(delayTime, dispatch_get_main_queue()) {
-      self.tapGesture.enabled = true
-      self.codeLabel.text = ""
     }
   }
 

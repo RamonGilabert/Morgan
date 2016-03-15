@@ -1,7 +1,7 @@
 PODS:
-  - Morgan (0.1.0):
+  - Morgan (0.9):
     - Walker
-  - Walker (0.1.0)
+  - Walker (0.9)
 
 DEPENDENCIES:
   - Morgan (from `../../`)
@@ -15,11 +15,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Walker:
-    :commit: da253edd244d96f5973b3505fa268b7dceb02fe1
+    :commit: 1c2fabe664f00110a92b07d20e531a81e8dc15e4
     :git: https://www.github.com/RamonGilabert/Walker
 
 SPEC CHECKSUMS:
-  Morgan: efdf3276ccb1d5ae7ee2362c04f74d17072d9db2
-  Walker: 694d094cc8e9c79d5b906ff1c2cea581ba1c9be0
+  Morgan: a87ce46d516b79b92a781fa45e1bd0735b912ab3
+  Walker: a9401362364ed7fb4e816b1946ca44bc8e233f9a
 
 COCOAPODS: 0.39.0.beta.4
