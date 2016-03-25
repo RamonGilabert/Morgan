@@ -3,10 +3,10 @@
 <div align = "center">
 <br>
 <a href="https://github.com/Carthage/Carthage" target="blank"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" /></a>
-<a href="http://cocoadocs.org/docsets/Walker" target="blank"><img src="https://img.shields.io/cocoapods/v/Walker.svg?style=flat" /></a>
-<a href="http://cocoadocs.org/docsets/Walker" target="blank"><img src="https://img.shields.io/cocoapods/l/Walker.svg?style=flat" /></a>
-<a href="http://cocoadocs.org/docsets/Walker" target="blank"><img src="https://img.shields.io/cocoapods/p/Walker.svg?style=flat" /></a>
-<a href="http://cocoadocs.org/docsets/Walker" target="blank"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/Walker.svg?style=flat" /></a>
+<a href="http://cocoadocs.org/docsets/Morgan" target="blank"><img src="https://img.shields.io/cocoapods/v/Morgan.svg?style=flat" /></a>
+<a href="http://cocoadocs.org/docsets/Morgan" target="blank"><img src="https://img.shields.io/cocoapods/l/Morgan.svg?style=flat" /></a>
+<a href="http://cocoadocs.org/docsets/Morgan" target="blank"><img src="https://img.shields.io/cocoapods/p/Morgan.svg?style=flat" /></a>
+<a href="http://cocoadocs.org/docsets/Morgan" target="blank"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/Morgan.svg?style=flat" /></a>
 <img src="https://img.shields.io/badge/%20in-swift%202.2-orange.svg" />
 <br><br>
 </div>
