@@ -147,6 +147,7 @@ public extension UIView {
     let x: CGFloat = vertical ? 0 : 1
     let y: CGFloat = vertical ? 1 : 0
 
+    transform = CGAffineTransformIdentity
     layer.zPosition = 400
 
     var perspective = CATransform3DIdentity
