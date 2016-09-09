@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		292D71E91C94A82600CFC060 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 292D71E81C94A82600CFC060 /* Info.plist */; };
+		29BB21A71D82B5C400FA2D92 /* Morgan+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB21A41D82B5C400FA2D92 /* Morgan+UIButton.swift */; };
+		29BB21A81D82B5C400FA2D92 /* Morgan+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB21A51D82B5C400FA2D92 /* Morgan+UIView.swift */; };
+		29BB21A91D82B5C400FA2D92 /* Morgan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB21A61D82B5C400FA2D92 /* Morgan.swift */; };
+		29BB21B71D82B69000FA2D92 /* Walker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29BB21B31D82B69000FA2D92 /* Walker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		292D71E81C94A82600CFC060 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29BB21A41D82B5C400FA2D92 /* Morgan+UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Morgan+UIButton.swift"; sourceTree = "<group>"; };
+		29BB21A51D82B5C400FA2D92 /* Morgan+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Morgan+UIView.swift"; sourceTree = "<group>"; };
+		29BB21A61D82B5C400FA2D92 /* Morgan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Morgan.swift; sourceTree = "<group>"; };
+		29BB21AB1D82B5D400FA2D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29BB21B31D82B69000FA2D92 /* Walker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Walker.framework; path = Carthage/Build/iOS/Walker.framework; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* Morgan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Morgan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -20,16 +27,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29BB21B71D82B69000FA2D92 /* Walker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		292D71E71C94A82600CFC060 /* Others */ = {
+		29BB21A31D82B5C400FA2D92 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				292D71E81C94A82600CFC060 /* Info.plist */,
+				29BB21A41D82B5C400FA2D92 /* Morgan+UIButton.swift */,
+				29BB21A51D82B5C400FA2D92 /* Morgan+UIView.swift */,
+				29BB21A61D82B5C400FA2D92 /* Morgan.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		29BB21AA1D82B5D400FA2D92 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				29BB21AB1D82B5D400FA2D92 /* Info.plist */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -37,8 +55,9 @@
 		D5B2E8951C3A780C00C0327D = {
 			isa = PBXGroup;
 			children = (
-				D5C629691C3A809D007F7B7C /* Sources */,
-				292D71E71C94A82600CFC060 /* Others */,
+				29BB21B31D82B69000FA2D92 /* Walker.framework */,
+				29BB21AA1D82B5D400FA2D92 /* Others */,
+				29BB21A31D82B5C400FA2D92 /* Sources */,
 				D5B2E8A01C3A780C00C0327D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,13 +68,6 @@
 				D5B2E89F1C3A780C00C0327D /* Morgan.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D5C629691C3A809D007F7B7C /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -79,6 +91,7 @@
 				D5B2E89B1C3A780C00C0327D /* Frameworks */,
 				D5B2E89C1C3A780C00C0327D /* Headers */,
 				D5B2E89D1C3A780C00C0327D /* Resources */,
+				29BB21B91D82B6B000FA2D92 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -126,17 +139,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				292D71E91C94A82600CFC060 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29BB21B91D82B6B000FA2D92 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Walker.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D5B2E89A1C3A780C00C0327D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29BB21A81D82B5C400FA2D92 /* Morgan+UIView.swift in Sources */,
+				29BB21A71D82B5C400FA2D92 /* Morgan+UIButton.swift in Sources */,
+				29BB21A91D82B5C400FA2D92 /* Morgan.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -222,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -240,6 +272,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Others/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -259,6 +295,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Others/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
