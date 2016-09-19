@@ -11,19 +11,20 @@
 		292D71F91C94A8B600CFC060 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292D71F81C94A8B600CFC060 /* ViewController.swift */; };
 		292D71FE1C94A8B600CFC060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 292D71FD1C94A8B600CFC060 /* Assets.xcassets */; };
 		292D72011C94A8B600CFC060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292D71FF1C94A8B600CFC060 /* LaunchScreen.storyboard */; };
-		45579E752024A00F64B9AF8F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A432EA12B87936021380A1BC /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CB83812CBA247881C2F5C6D4 /* Pods_MorganDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30B468D350C63FCF4B883AD /* Pods_MorganDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		292D71F31C94A8B600CFC060 /* MorganDemoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorganDemoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		292D71F31C94A8B600CFC060 /* MorganDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorganDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		292D71F61C94A8B600CFC060 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		292D71F81C94A8B600CFC060 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		292D71FD1C94A8B600CFC060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		292D72001C94A8B600CFC060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		292D72021C94A8B600CFC060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		770E2BDA39EF0F869117FDED /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3FC181F93B1C398BBFEB973D /* Pods-MorganDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorganDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorganDemo/Pods-MorganDemo.release.xcconfig"; sourceTree = "<group>"; };
+		A30B468D350C63FCF4B883AD /* Pods_MorganDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorganDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A432EA12B87936021380A1BC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA319F3D60C66C06465AD417 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FE0392565841E703803D9D17 /* Pods-MorganDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorganDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorganDemo/Pods-MorganDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45579E752024A00F64B9AF8F /* Pods.framework in Frameworks */,
+				CB83812CBA247881C2F5C6D4 /* Pods_MorganDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,15 +44,15 @@
 			children = (
 				292D71F51C94A8B600CFC060 /* Morgan */,
 				292D71F41C94A8B600CFC060 /* Products */,
-				6E414493080EC22AA7FAFCB8 /* Pods */,
 				9DDF929442EE3A071541D37B /* Frameworks */,
+				C00DA1E61423DD9B1103818A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		292D71F41C94A8B600CFC060 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				292D71F31C94A8B600CFC060 /* MorganDemoDemo.app */,
+				292D71F31C94A8B600CFC060 /* MorganDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,44 +69,45 @@
 			path = Morgan;
 			sourceTree = "<group>";
 		};
-		6E414493080EC22AA7FAFCB8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DA319F3D60C66C06465AD417 /* Pods.debug.xcconfig */,
-				770E2BDA39EF0F869117FDED /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		9DDF929442EE3A071541D37B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				A432EA12B87936021380A1BC /* Pods.framework */,
+				A30B468D350C63FCF4B883AD /* Pods_MorganDemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C00DA1E61423DD9B1103818A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE0392565841E703803D9D17 /* Pods-MorganDemo.debug.xcconfig */,
+				3FC181F93B1C398BBFEB973D /* Pods-MorganDemo.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		292D71F21C94A8B600CFC060 /* MorganDemoDemo */ = {
+		292D71F21C94A8B600CFC060 /* MorganDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 292D72051C94A8B600CFC060 /* Build configuration list for PBXNativeTarget "MorganDemoDemo" */;
+			buildConfigurationList = 292D72051C94A8B600CFC060 /* Build configuration list for PBXNativeTarget "MorganDemo" */;
 			buildPhases = (
-				2CFA418D57C4ADD17770DB1B /* Check Pods Manifest.lock */,
+				418DBD9A9BA5C9321B6B74D4 /* [CP] Check Pods Manifest.lock */,
 				292D71EF1C94A8B600CFC060 /* Sources */,
 				292D71F01C94A8B600CFC060 /* Frameworks */,
 				292D71F11C94A8B600CFC060 /* Resources */,
-				93C696F91B64E99F59243A22 /* Embed Pods Frameworks */,
-				1B5EF2CFF7354A6DB658D736 /* Copy Pods Resources */,
+				8DE9FBB88DEB46D68BFAAD1F /* [CP] Embed Pods Frameworks */,
+				F0FF4046365805FB3156ED9B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MorganDemoDemo;
+			name = MorganDemo;
 			productName = Morgan;
-			productReference = 292D71F31C94A8B600CFC060 /* MorganDemoDemo.app */;
+			productReference = 292D71F31C94A8B600CFC060 /* MorganDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -115,11 +117,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = RamonGilabert;
 				TargetAttributes = {
 					292D71F21C94A8B600CFC060 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -136,7 +139,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				292D71F21C94A8B600CFC060 /* MorganDemoDemo */,
+				292D71F21C94A8B600CFC060 /* MorganDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -154,29 +157,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B5EF2CFF7354A6DB658D736 /* Copy Pods Resources */ = {
+		418DBD9A9BA5C9321B6B74D4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2CFA418D57C4ADD17770DB1B /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,19 +172,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		93C696F91B64E99F59243A22 /* Embed Pods Frameworks */ = {
+		8DE9FBB88DEB46D68BFAAD1F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorganDemo/Pods-MorganDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0FF4046365805FB3156ED9B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorganDemo/Pods-MorganDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -238,8 +241,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -282,8 +287,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -302,31 +309,36 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		292D72061C94A8B600CFC060 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA319F3D60C66C06465AD417 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = FE0392565841E703803D9D17 /* Pods-MorganDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Morgan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RamonGilabert.Morgan;
-				PRODUCT_NAME = MorganDemoDemo;
+				PRODUCT_NAME = MorganDemo;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		292D72071C94A8B600CFC060 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 770E2BDA39EF0F869117FDED /* Pods.release.xcconfig */;
+			baseConfigurationReference = 3FC181F93B1C398BBFEB973D /* Pods-MorganDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Morgan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RamonGilabert.Morgan;
-				PRODUCT_NAME = MorganDemoDemo;
+				PRODUCT_NAME = MorganDemo;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -342,7 +354,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		292D72051C94A8B600CFC060 /* Build configuration list for PBXNativeTarget "MorganDemoDemo" */ = {
+		292D72051C94A8B600CFC060 /* Build configuration list for PBXNativeTarget "MorganDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				292D72061C94A8B600CFC060 /* Debug */,

@@ -10,10 +10,10 @@ class ViewController: UIViewController {
 
   lazy var animationView: UIView = {
     let view = UIView()
-    view.backgroundColor = UIColor.whiteColor()
+    view.backgroundColor = UIColor.white
     view.translatesAutoresizingMaskIntoConstraints = false
     view.layer.cornerRadius = 7.5
-    view.layer.shadowColor = UIColor.blackColor().colorWithAlphaComponent(0.15).CGColor
+    view.layer.shadowColor = UIColor.black.withAlphaComponent(0.15).cgColor
     view.layer.shadowOffset.height = 5
     view.layer.shadowRadius = 5
     view.layer.shadowOpacity = 1
@@ -24,8 +24,8 @@ class ViewController: UIViewController {
   lazy var codeLabel: UILabel = {
     let label = UILabel()
     label.font = UIFont(name: "Menlo-Regular", size: 16)
-    label.textColor = UIColor.whiteColor()
-    label.textAlignment = .Center
+    label.textColor = UIColor.white
+    label.textAlignment = .center
     label.text = "Tap the view to animate"
     label.translatesAutoresizingMaskIntoConstraints = false
 
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 
   lazy var tapGesture: UITapGestureRecognizer = { [unowned self] in
     let gesture = UITapGestureRecognizer()
-    gesture.addTarget(self, action: "handleTapGesture")
+    gesture.addTarget(self, action: #selector(ViewController.handleTapGesture))
 
     return gesture
   }()
@@ -85,20 +85,20 @@ class ViewController: UIViewController {
   // MARK: - Configuration
 
   func setupConstraints() {
-    NSLayoutConstraint.activateConstraints([
-      codeLabel.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
-      codeLabel.centerYAnchor.constraintGreaterThanOrEqualToAnchor(animationView.topAnchor, constant: -75),
+    NSLayoutConstraint.activate([
+      codeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      codeLabel.centerYAnchor.constraint(greaterThanOrEqualTo: animationView.topAnchor, constant: -75),
 
-      animationView.widthAnchor.constraintEqualToConstant(Dimensions.viewSize),
-      animationView.heightAnchor.constraintEqualToConstant(Dimensions.viewSize),
-      animationView.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
-      animationView.centerYAnchor.constraintGreaterThanOrEqualToAnchor(view.centerYAnchor, constant: -120)
+      animationView.widthAnchor.constraint(equalToConstant: Dimensions.viewSize),
+      animationView.heightAnchor.constraint(equalToConstant: Dimensions.viewSize),
+      animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      animationView.centerYAnchor.constraint(greaterThanOrEqualTo: view.centerYAnchor, constant: -120)
     ])
   }
 
   // MARK: - Helper methods
 
-  override func preferredStatusBarStyle() -> UIStatusBarStyle {
-    return .LightContent
+  override var preferredStatusBarStyle : UIStatusBarStyle {
+    return .lightContent
   }
 }

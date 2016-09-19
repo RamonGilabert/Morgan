@@ -3,4 +3,5 @@ use_frameworks!
 platform :ios, '8.0'
 
 pod 'Morgan', path: '../../'
-pod 'Walker', git: 'https://www.github.com/RamonGilabert/Walker'
+pod 'Walker', git: 'https://www.github.com/RamonGilabert/Walker', :branch => 'swift-3'
+target 'MorganDemo'

@@ -1,25 +1,28 @@
 PODS:
-  - Morgan (0.9):
+  - Morgan (0.9.1):
     - Walker
-  - Walker (0.9)
+  - Walker (0.9.1)
 
 DEPENDENCIES:
   - Morgan (from `../../`)
-  - Walker (from `https://www.github.com/RamonGilabert/Walker`)
+  - Walker (from `https://www.github.com/RamonGilabert/Walker`, branch `swift-3`)
 
 EXTERNAL SOURCES:
   Morgan:
-    :path: ../../
+    :path: "../../"
   Walker:
+    :branch: swift-3
     :git: https://www.github.com/RamonGilabert/Walker
 
 CHECKOUT OPTIONS:
   Walker:
-    :commit: 7a06bc367203aa687c71ab00e834206724fc59ba
+    :commit: 47b9490594e29fea29ba6ce0b53763da3ccecc77
     :git: https://www.github.com/RamonGilabert/Walker
 
 SPEC CHECKSUMS:
-  Morgan: a87ce46d516b79b92a781fa45e1bd0735b912ab3
-  Walker: a9401362364ed7fb4e816b1946ca44bc8e233f9a
+  Morgan: 9cb6cdfd5eaafcdc98af5c05620cad575ace77de
+  Walker: 9a765e7f35adb19ce59079e26d425c1e8c463241
 
-COCOAPODS: 0.39.0.beta.4
+PODFILE CHECKSUM: 1e42c290945760aff81f50b01bf8d0e82df4984d
+
+COCOAPODS: 1.0.1
