@@ -3,18 +3,18 @@ import Walker
 
 public extension UIView {
 
-  public func shake(landscape: Bool = true, duration: NSTimeInterval = 0.075, completion: (() -> ())? = nil) {
+  public func shake(_ landscape: Bool = true, duration: TimeInterval = 0.075, completion: (() -> ())? = nil) {
     let x: CGFloat = landscape ? 25 : 0
     let y: CGFloat = landscape ? 0 : 25
 
     animate(self, duration: duration) {
-      $0.transform = CGAffineTransformMakeTranslation(-x, -y)
+      $0.transform = CGAffineTransform(translationX: -x, y: -y)
     }.chain(duration: duration) {
-      $0.transform = CGAffineTransformMakeTranslation(x, y)
+      $0.transform = CGAffineTransform(translationX: x, y: y)
     }.chain(duration: duration) {
-      $0.transform = CGAffineTransformMakeTranslation(-x / 2, -y / 2)
+      $0.transform = CGAffineTransform(translationX: -x / 2, y: -y / 2)
     }.chain(duration: duration) {
-      $0.transform = CGAffineTransformIdentity
+      $0.transform = CGAffineTransform.identity
     }.finally {
       completion?()
     }
@@ -22,8 +22,8 @@ public extension UIView {
 
   // MARK: - Float
 
-  public func levitate(duration: NSTimeInterval = 0.5, times: Float = Float.infinity, completion: (() -> ())? = nil) {
-    animate(self, duration: duration, options: [.Reverse, .Repeat(times)]) {
+  public func levitate(_ duration: TimeInterval = 0.5, times: Float = Float.infinity, completion: (() -> ())? = nil) {
+    animate(self, duration: duration, options: [.reverse, .repeat(times)]) {
       $0.transform3D = CATransform3DMakeScale(0.97, 0.97, 0.97)
     }.finally {
       completion?()
@@ -32,35 +32,35 @@ public extension UIView {
 
   // MARK: - Push
 
-  public func pushDown(duration: NSTimeInterval = 0.15, completion: (() -> ())? = nil) {
+  public func pushDown(_ duration: TimeInterval = 0.15, completion: (() -> ())? = nil) {
     animate(self, duration: duration) {
-      $0.transform = CGAffineTransformMakeScale(0.9, 0.9)
+      $0.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
     }.chain(duration: duration / 2) {
-      $0.transform = CGAffineTransformMakeScale(1.1, 1.1)
+      $0.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
     }.chain(duration: duration / 2) {
-      $0.transform = CGAffineTransformIdentity
+      $0.transform = CGAffineTransform.identity
     }.finally {
       completion?()
     }
   }
 
-  public func pushUp(duration: NSTimeInterval = 0.2, completion: (() -> ())? = nil) {
+  public func pushUp(_ duration: TimeInterval = 0.2, completion: (() -> ())? = nil) {
     animate(self, duration: duration) {
-      $0.transform = CGAffineTransformMakeScale(1.1, 1.1)
+      $0.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
     }.chain(duration: duration / 2) {
-      $0.transform = CGAffineTransformMakeScale(0.9, 0.9)
+      $0.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
     }.chain(duration: duration / 2) {
-      $0.transform = CGAffineTransformIdentity
+      $0.transform = CGAffineTransform.identity
     }.finally {
       completion?()
     }
   }
 
-  public func peek(completion: (() -> ())? = nil) {
+  public func peek(_ completion: (() -> ())? = nil) {
     layer.transform = CATransform3DMakeScale(0.01, 0.01, 1)
 
     spring(self, delay: 0.01, spring: 100, friction: 10, mass: 10) {
-      $0.transform = CGAffineTransformIdentity
+      $0.transform = CGAffineTransform.identity
     }.finally {
       completion?()
     }
@@ -68,7 +68,7 @@ public extension UIView {
 
   // MARK: - Fade
 
-  public func fade(appear: Bool = false, duration: NSTimeInterval = 0.4,
+  public func fade(_ appear: Bool = false, duration: TimeInterval = 0.4,
     remove: Bool = false, completion: (() -> ())? = nil) {
 
       animate(self, duration: duration) {
@@ -82,21 +82,21 @@ public extension UIView {
 
   // MARK: - Transformations
 
-  public func morph(duration: NSTimeInterval = 0.2, completion: (() -> ())? = nil) {
+  public func morph(_ duration: TimeInterval = 0.2, completion: (() -> ())? = nil) {
     animate(self, duration: duration) {
-      $0.transform = CGAffineTransformMakeScale(1.3, 0.7)
+      $0.transform = CGAffineTransform(scaleX: 1.3, y: 0.7)
     }.chain(duration: duration) {
-      $0.transform = CGAffineTransformMakeScale(0.7, 1.3)
+      $0.transform = CGAffineTransform(scaleX: 0.7, y: 1.3)
     }.chain(duration: duration) {
-      $0.transform = CGAffineTransformMakeScale(1.2, 0.8)
+      $0.transform = CGAffineTransform(scaleX: 1.2, y: 0.8)
     }.chain(spring: 100, friction: 10, mass: 10) {
-      $0.transform = CGAffineTransformIdentity
+      $0.transform = CGAffineTransform.identity
     }.finally {
       completion?()
     }
   }
 
-  public func swing(duration: NSTimeInterval = 0.075, completion: (() -> ())? = nil) {
+  public func swing(_ duration: TimeInterval = 0.075, completion: (() -> ())? = nil) {
     animate(self, duration: duration) {
       $0.transform3D = CATransform3DMakeRotation(0.25, 0, 0, 1)
     }.chain(duration: duration) {
@@ -104,7 +104,7 @@ public extension UIView {
     }.chain(duration: duration) {
       $0.transform3D = CATransform3DMakeRotation(0.1, 0, 0, 1)
     }.chain(duration: duration) {
-      $0.transform = CGAffineTransformIdentity
+      $0.transform = CGAffineTransform.identity
     }.finally {
       completion?()
     }
@@ -112,7 +112,7 @@ public extension UIView {
 
   // MARK: - Fall
 
-  public func fall(duration: NSTimeInterval = 0.15, reset: Bool = false, completion: (() -> ())? = nil) {
+  public func fall(_ duration: TimeInterval = 0.15, reset: Bool = false, completion: (() -> ())? = nil) {
     let initialAnchor = layer.anchorPoint
     let initialOrigin = layer.frame.origin
 
@@ -128,7 +128,7 @@ public extension UIView {
     }.chain(duration: duration / 1.2) {
       $0.transform3D = CATransform3DMakeRotation(0.25, 0, 0, 1)
       }.chain(delay: 0.25, duration: duration * 4.5) {
-      $0.transform = CGAffineTransformMakeTranslation(0, 1000)
+      $0.transform = CGAffineTransform(translationX: 0, y: 1000)
     }.finally {
       if reset {
         self.layer.anchorPoint = initialAnchor
@@ -142,12 +142,12 @@ public extension UIView {
 
   // MARK: - Flip
 
-  public func flip(duration: NSTimeInterval = 0.5, vertical: Bool = true, completion: (() -> ())? = nil) {
+  public func flip(_ duration: TimeInterval = 0.5, vertical: Bool = true, completion: (() -> ())? = nil) {
     let initialZ = layer.zPosition
     let x: CGFloat = vertical ? 0 : 1
     let y: CGFloat = vertical ? 1 : 0
 
-    transform = CGAffineTransformIdentity
+    transform = CGAffineTransform.identity
     layer.zPosition = 400
 
     var perspective = CATransform3DIdentity
@@ -171,10 +171,10 @@ public extension UIView {
 
   // MARK: - Appear
 
-  public func slide(duration: NSTimeInterval = 0.5,
-    fade: Bool = true, origin: CGPoint = CGPointZero, completion: (() -> ())? = nil) {
+  public func slide(_ duration: TimeInterval = 0.5,
+    fade: Bool = true, origin: CGPoint = CGPoint.zero, completion: (() -> ())? = nil) {
       
-      let point = origin == CGPointZero ? layer.frame.origin : origin
+      let point = origin == CGPoint.zero ? layer.frame.origin : origin
       let anchorPoint = layer.anchorPoint
       let initialOrigin = layer.frame.origin
 
@@ -203,7 +203,7 @@ public extension UIView {
 
   // MARK: - Disappear
 
-  public func disappear(duration: NSTimeInterval = 0.5, reset: Bool = false, completion: (() -> ())? = nil) {
+  public func disappear(_ duration: TimeInterval = 0.5, reset: Bool = false, completion: (() -> ())? = nil) {
     let anchorPoint = layer.anchorPoint
 
     layer.anchorPoint = CGPoint(x: 0, y: 0)
@@ -212,9 +212,9 @@ public extension UIView {
       y: layer.frame.origin.y - layer.frame.size.height / 2)
 
     animate(self, duration: 0.1) {
-      $0.transform = CGAffineTransformMakeTranslation(-15, 0)
+      $0.transform = CGAffineTransform(translationX: -15, y: 0)
     }.chain(duration: duration) {
-      $0.transform = CGAffineTransformMakeTranslation(500, 0)
+      $0.transform = CGAffineTransform(translationX: 500, y: 0)
     }.finally {
       self.layer.anchorPoint = anchorPoint
       self.layer.frame.origin = CGPoint(
@@ -231,11 +231,11 @@ public extension UIView {
 
   // MARK: - Zoom
 
-  public func zoom(duration: NSTimeInterval = 0.5, zoomOut: Bool = true, completion: (() -> ())? = nil) {
+  public func zoom(_ duration: TimeInterval = 0.5, zoomOut: Bool = true, completion: (() -> ())? = nil) {
 
     if zoomOut {
       animate(self) {
-        $0.transform = CGAffineTransformMakeScale(3, 3)
+        $0.transform = CGAffineTransform(scaleX: 3, y: 3)
         $0.alpha = 0
       }.finally {
         completion?()
@@ -244,7 +244,7 @@ public extension UIView {
       layer.transform = CATransform3DMakeScale(0.01, 0.01, 1)
 
       spring(self, spring: 75, friction: 10, mass: 10) {
-        $0.transform = CGAffineTransformIdentity
+        $0.transform = CGAffineTransform.identity
       }.finally {
         completion?()
       }

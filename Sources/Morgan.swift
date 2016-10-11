@@ -4,16 +4,16 @@ public struct Morgan {
 
   // MARK: - Transitions
 
-  public static func flip<T : UIView>(view: T, subview: T,
-    right: Bool = true, duration: NSTimeInterval = 0.6,
+  public static func flip<T : UIView>(_ view: T, subview: T,
+    right: Bool = true, duration: TimeInterval = 0.6,
     completion: (() -> ())? = nil) {
 
       let options: UIViewAnimationOptions = right
-        ? .TransitionFlipFromRight : .TransitionFlipFromLeft
+        ? .transitionFlipFromRight : .transitionFlipFromLeft
 
-      UIView.transitionFromView(view, toView: subview,
+      UIView.transition(from: view, to: subview,
         duration: duration, options: [options,
-          .BeginFromCurrentState, .OverrideInheritedOptions],
+          .beginFromCurrentState, .overrideInheritedOptions],
         completion: { _ in
           completion?()
       })
