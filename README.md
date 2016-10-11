@@ -7,7 +7,7 @@
 <a href="http://cocoadocs.org/docsets/Morgan" target="blank"><img src="https://img.shields.io/cocoapods/l/Morgan.svg?style=flat" /></a>
 <a href="http://cocoadocs.org/docsets/Morgan" target="blank"><img src="https://img.shields.io/cocoapods/p/Morgan.svg?style=flat" /></a>
 <a href="http://cocoadocs.org/docsets/Morgan" target="blank"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/Morgan.svg?style=flat" /></a>
-<img src="https://img.shields.io/badge/%20in-swift%202.2-orange.svg" />
+<img src="https://img.shields.io/badge/%20in-swift%203.0-orange.svg" />
 <br><br>
 </div>
 
